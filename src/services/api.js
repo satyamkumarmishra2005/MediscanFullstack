@@ -1,4 +1,4 @@
-const API_BASE = 'http://localhost:8080/api/v1';
+const API_BASE = 'https://mediscan-crhrg3axa7hrc2fm.centralindia-01.azurewebsites.net/api/v1';
 
 export const api = {
   // Medicine identification via image upload
