@@ -1,0 +1,240 @@
+/* Platform brand colors */
+:root {
+  --c-1mg:     #e11d48;
+  --c-pharma:  #16a34a;
+  --c-apollo:  #7c3aed;
+  --c-medplus: #d97706;
+}
+
+/* Section header */
+.price-head { margin-bottom: 14px; }
+.price-head-top {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 4px;
+}
+.price-head-title {
+  font-size: 1.05rem;
+  font-weight: 700;
+  flex: 1;
+}
+.price-head-sub {
+  font-size: 0.8rem;
+  color: var(--text-3);
+  margin-top: -2px;
+}
+
+/* Grid — 2 columns */
+.price-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+}
+
+/* Card base */
+.p-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--r-xl);
+  box-shadow: var(--shadow-card);
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  transition: box-shadow 0.2s ease, border-color 0.2s ease, transform 0.2s ease;
+  overflow: hidden;
+}
+
+/* Top accent bar instead of full side border, looks cleaner */
+.p-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 3px;
+  background: var(--platform-color, var(--border));
+}
+
+.p-card:hover {
+  box-shadow: var(--shadow-elevated);
+  border-color: var(--border-mid);
+  transform: translateY(-2px);
+}
+.p-card:hover::before {
+  height: 4px;
+}
+
+/* Highlight for Lowest price */
+.p-card-best {
+  background: linear-gradient(135deg, rgba(34,197,94,0.06) 0%, transparent 100%);
+  border-color: rgba(34,197,94,0.2);
+}
+.p-card-best:hover {
+  border-color: rgba(34,197,94,0.3);
+}
+
+/* Badges floating corner */
+.p-badge-wrap {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  display: flex;
+  gap: 6px;
+}
+.p-best-badge {
+  padding: 3px 10px;
+  background: var(--green);
+  color: #fff;
+  font-size: 0.65rem;
+  font-weight: 700;
+  border-radius: var(--r-pill);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  box-shadow: 0 2px 8px rgba(34,197,94,0.25);
+}
+.p-redirect-badge {
+  padding: 3px 10px;
+  background: rgba(255,255,255,0.06);
+  color: var(--text-2);
+  border: 1px solid rgba(255,255,255,0.1);
+  font-size: 0.65rem;
+  font-weight: 600;
+  border-radius: var(--r-pill);
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+
+/* Card Inner body */
+.p-card-body {
+  padding: 20px 22px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+/* Platform Name Row */
+.p-platform-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 4px;
+}
+.p-platform-dot {
+  width: 8px; height: 8px;
+  border-radius: 50%;
+  background: var(--platform-color, #888);
+  flex-shrink: 0;
+  box-shadow: 0 0 10px var(--platform-color);
+}
+.p-platform-name {
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--text-2);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+/* Price Typography */
+.p-price-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 2px;
+  line-height: 1;
+}
+.p-currency { 
+  font-size: 1.1rem; 
+  font-weight: 600; 
+  color: var(--text-3); 
+  margin-top: 4px;
+}
+.p-amount { 
+  font-size: 2.2rem; 
+  font-weight: 800; 
+  color: var(--text-1); 
+  letter-spacing: -0.04em; 
+}
+.p-no-price {
+  font-size: 0.8rem;
+  color: var(--text-3);
+  font-style: italic;
+}
+
+/* Product Description */
+.p-prod-name {
+  font-size: 0.82rem;
+  color: var(--text-2);
+  line-height: 1.45;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  margin-top: 8px;
+}
+
+/* Button */
+.p-cta {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 12px;
+  border-radius: var(--r-md);
+  font-size: 0.85rem;
+  font-weight: 600;
+  transition: all 0.2s ease;
+  text-decoration: none;
+  margin-top: 14px;
+}
+.p-cta-buy {
+  background: rgba(6,182,212,0.1);
+  color: var(--blue-light);
+  border: 1px solid rgba(6,182,212,0.25);
+}
+.p-cta-buy:hover {
+  background: rgba(6,182,212,0.18);
+  border-color: rgba(6,182,212,0.4);
+}
+.p-cta-visit {
+  background: transparent;
+  color: var(--text-2);
+  border: 1px dashed var(--border-mid);
+}
+.p-cta-visit:hover {
+  background: rgba(255,255,255,0.04);
+  border-style: solid;
+  color: var(--text-1);
+}
+
+/* Skeletons */
+.price-skeleton-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+}
+.price-skeleton-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--r-xl);
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+/* Empty State */
+.price-empty {
+  padding: 32px 24px;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--r-xl);
+  text-align: center;
+  color: var(--text-3);
+  font-size: 0.9rem;
+}
+
+@media (max-width: 600px) {
+  .price-grid, .price-skeleton-grid {
+    grid-template-columns: 1fr;
+  }
+}
