@@ -172,6 +172,7 @@
   color: var(--text-1);
   font-family: inherit;
   padding: 8px 0;
+  min-width: 0;
 }
 .search-input::placeholder { color: var(--text-3); }
 .search-input:disabled { opacity: 0.5; }
@@ -231,4 +232,6 @@
   .hero-title { font-size: 1.85rem; }
   .hero-stats { gap: 20px; }
   .stat-value { font-size: 1.1rem; }
+  .search-area { padding: 14px; }
+  .search-go { padding: 8px 12px; font-size: 0.78rem; }
 }
