@@ -1,5 +1,6 @@
 import { useState, useRef } from 'react';
 import { RotateCcw, Scan } from 'lucide-react';
+import { Analytics } from '@vercel/analytics/react';
 import Navbar from './components/Navbar';
 import HeroSection from './components/HeroSection';
 import MedicineCard from './components/MedicineCard';
@@ -96,6 +97,7 @@ function App() {
           <p className="footer-disclaimer">Prices are indicative. Always verify on the pharmacy website.</p>
         </div>
       </footer>
+      <Analytics />
     </div>
   );
 }
